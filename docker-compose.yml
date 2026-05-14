@@ -1,0 +1,23 @@
+services:
+  backend:
+    image: ${BACKEND_IMAGE:-tienda-backend:latest}
+    container_name: tienda-backend
+    restart: unless-stopped
+    environment:
+      PORT: "3001"
+      DB_HOST: ${DB_HOST:-tienda-db}
+      DB_USER: ${DB_USER:-root}
+      DB_PASSWORD: ${DB_PASSWORD:-admin123}
+      DB_NAME: ${DB_NAME:-tienda_perritos}
+      DB_PORT: "3306"
+      DB_RETRY_ATTEMPTS: ${DB_RETRY_ATTEMPTS:-30}
+      DB_RETRY_DELAY_MS: ${DB_RETRY_DELAY_MS:-2000}
+    ports:
+      - "${BACKEND_PORT:-3001}:3001"
+    networks:
+      - tienda-network
+
+networks:
+  tienda-network:
+    external: true
+    name: ${DOCKER_NETWORK:-tienda-network}
