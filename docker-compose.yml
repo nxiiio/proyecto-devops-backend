@@ -1,6 +1,9 @@
 services:
   backend:
-    image: 381491969012.dkr.ecr.us-east-1.amazonaws.com/innovatech-backend:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: nxiiio/innovatech-backend:latest
     container_name: innovatech-backend
     restart: always
     ports:
