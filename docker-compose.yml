@@ -7,7 +7,7 @@ services:
     container_name: innovatech-backend
     restart: always
     ports:
-      - "3000:3000"
+      - "3000:3001"
     environment:
       DB_HOST: "10.0.151.253"
       DB_PORT: "3306"
