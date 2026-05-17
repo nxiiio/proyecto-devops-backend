@@ -6,7 +6,7 @@ services:
     ports:
       - "3000:3000"
     environment:
-      DB_HOST: "IP_PRIVADA_BDD"
+      DB_HOST: "10.0.151.253"
       DB_PORT: "3306"
       DB_NAME: "innovatech"
       DB_USER: "usuario"
